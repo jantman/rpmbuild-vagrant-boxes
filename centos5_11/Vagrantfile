@@ -15,6 +15,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
+  # allow SSH agent forwarding
+  config.ssh.forward_agent
+
   # Provision the machine with the appliction
   config.vm.provision "shell",
                       inline: "yum install -y rpm-build redhat-rpm-config make gcc openssl openssl-devel wget"
