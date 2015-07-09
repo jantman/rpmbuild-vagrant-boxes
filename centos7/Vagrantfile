@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # allow SSH agent forwarding
-  config.ssh.forward_agent
+  config.ssh.forward_agent = true
 
   # Provision the machine with the appliction
   config.vm.provision "shell",
